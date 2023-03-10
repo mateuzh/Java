@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import javax.net.ssl.SSLEngineResult.Status;
 
-public class exercicios {
+public class TodosExercicios {
     
     public static float[] entradaValores (float[] valores){
         
