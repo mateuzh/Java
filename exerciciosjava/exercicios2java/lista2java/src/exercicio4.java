@@ -11,7 +11,8 @@ public class exercicio4 {
     public static void main(String[] args) throws Exception{
         Scanner input = new Scanner(System.in);
         float vetorF[] = new float[5];
-        for(int i = 0; i < 5; i++){
+        // .length retorna o tamanho do vetor
+        for(int i = 0; i < vetorF.length; i++){
             System.out.println("Digite o "+ (i+1) + "º valor: ");
             vetorF[i] = input.nextFloat();
         }

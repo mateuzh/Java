@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 
-
+//Utilizar foreach
 public class exercicio3 {
     public static void menorMaior(int[] vetor){
         int maior = 0, menor = 0;
@@ -26,6 +26,7 @@ public class exercicio3 {
     public static void main(String[] args) throws Exception{
         Scanner keyboard = new Scanner(System.in);
         int values[] = new int[5];
+        //values.length dá o tamanho do vetor
         for (int i =  0; i < 5; i++){
             System.out.print("Digite o "+ (i+1) + "º valor: ");
             values[i] = keyboard.nextInt();

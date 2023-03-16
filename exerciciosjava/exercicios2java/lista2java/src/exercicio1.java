@@ -1,10 +1,8 @@
 public class exercicio1 {
-    public static double pi (){
-        double valorDePI = 3.14;
-        return valorDePI;
+    public static float pi (){
+        return 3.14f;
     }
     public static void main(String[] args) throws Exception {
-        float PI = (float)pi();
-        System.out.println(PI);
+        System.out.println();
     }
 }
