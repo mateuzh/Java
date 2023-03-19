@@ -54,7 +54,7 @@ public class App {
         cafe.quantidadeAgua = 100;
         cafe.quantidadeCafe = 10;
         cafe.fazerCafe();
-        System.out.println(cafe.status());
+        System.out.println(cafe.status()/);
         
         entrada.close();
     }
