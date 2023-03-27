@@ -1,17 +1,45 @@
+import java.util.Scanner;
+
+import javax.lang.model.util.ElementScanner6;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        Produto produto1 = new Produto("Câmera de segurança", 99.90, 10);
-        produto1.venderProduto(3);
-        produto1.venderProduto(11);
+        Scanner entrada = new Scanner(System.in);
+        Produto produto1 = new Produto();
+        Funcionario funcionario1 = new Funcionario();
 
-        Funcionario funcionario1 = new Funcionario("Mateus", "Analista de Sistemas", 5000.00);
-        Funcionario funcionario2 = new Funcionario("Henrique", "Empacotador", 1500.00);
+        System.out.print("Digite o nome do 1º produto: ");
+        produto1.setNome(entrada.nextLine());
+        System.out.print("Digite o preço do "+ produto1.getNome() + ": ");
+        produto1.setPreco(entrada.nextDouble());
+        System.out.print("Digite a quantidade de estoque do "+ produto1.getNome() + ": ");
+        produto1.setQtdEstoque(entrada.nextInt());
+        System.out.println(" ");
+        System.out.println(produto1.exibirProduto());
+        System.out.println(" ");
+
+        while(produto1.getQtdEstoque() > 0)
+            {System.out.println("\nDeseja vender quantas unidades: ");
+            int quantidade = entrada.nextInt();
+            if(quantidade == 0){
+                break;
+            }else{
+                produto1.venderProduto(quantidade);
+            }
+        }
+        entrada.nextLine();
+        System.out.println(" ");
+
+        System.out.print("Nome do funcionário: ");
+        funcionario1.setNome(entrada.nextLine());
+        System.out.print("Cargo do funcionário: ");
+        funcionario1.setCargo(entrada.nextLine());   
+        System.out.print("Salário do funcionário: R$");
+        funcionario1.setSalario(entrada.nextDouble());
 
         funcionario1.calcularImposto();
-        funcionario2.calcularImposto();
 
         funcionario1.exibirFuncionario();
-        funcionario2.exibirFuncionario();
 
         Aluno aluno1 = new Aluno("Gustavo", 19, 7, 8);
         aluno1.setMedia(aluno1.calcularMedia(aluno1.getNota1(), aluno1.getNota2()));
@@ -25,5 +53,7 @@ public class App {
         System.out.println(aluno1.status());
         System.out.println(aluno2.status());
         System.out.println(aluno3.status());
+
+        entrada.close();
     }
 }

@@ -3,10 +3,8 @@ public class Produto {
     private double preco;
     private int qtdEstoque;
 
-    public Produto(String nome, double preco, int qtdEstoque){
-        this.nome = nome;
-        this.preco = preco;
-        this.qtdEstoque = qtdEstoque;
+    public Produto(){
+        
     }
 
     public String getNome() {
