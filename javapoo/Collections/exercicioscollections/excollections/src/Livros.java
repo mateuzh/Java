@@ -9,6 +9,10 @@ public class Livros implements Comparable<Livros> {
         this.quantidade = quantidade;
     }
 
+    public Livros(){
+        
+    }
+
     public int verEstoque(){
         return getQuantidade();
     }

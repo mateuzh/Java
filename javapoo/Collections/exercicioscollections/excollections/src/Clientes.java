@@ -7,6 +7,11 @@ public class Clientes {
         this.nome = nome;
         this.listaLivros = listaLivros;
     }
+
+    public Clientes (String nome){
+        
+    }
+
     public String getNome() {
         return nome;
     }
