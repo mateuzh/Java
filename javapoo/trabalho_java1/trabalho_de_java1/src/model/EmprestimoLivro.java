@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.*;
 
-public class EmprestimoLivro {
+public class EmprestimoLivro implements Serializable{
     private Usuario usuario;
     private Livro livro;
     private Boolean devolvido;

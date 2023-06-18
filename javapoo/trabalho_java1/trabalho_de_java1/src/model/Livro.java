@@ -18,6 +18,14 @@ public class Livro implements Serializable {
         this.categoria = categoria;
     }
 
+    public Livro(String titulo, String autor, int anoPublicacao, int exemplaresDisponiveis, CategoriaLivro categoria) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+        this.exemplaresDisponiveis = exemplaresDisponiveis;
+        this.categoria = categoria;
+    }
+
     public Livro() {
     }    
 
