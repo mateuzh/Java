@@ -2,8 +2,6 @@ package com;
 
 import java.util.Scanner;
 
-import javax.swing.SpinnerDateModel;
-
 import com.controller.PessoaController;
 import com.model.*;
 
@@ -13,8 +11,9 @@ public class App
     public static void main( String[] args )
     {
         Scanner in = new Scanner(System.in);
-        int i, i2, id, codPais, ddd, numeroCel;    
+        int i, i2, id, codPais, ddd, numeroCel, idParaLigar;    
         String rua, cidade, nome, email, tipoContato;
+        Estado estado;
         Boolean menuAlteracao = true;
         Boolean menuPrincipal = true;
 
@@ -26,6 +25,7 @@ public class App
                                "\n3 - Procurar Contato " +
                                "\n4 - Excluir Contato " +
                                "\n5 - Alterar Contato " +
+                               "\n6 - Ligar para um Contato " +
                                "\n0 - Sair");
             i = in.nextInt();
             switch(i){
@@ -38,7 +38,6 @@ public class App
                     nome = in.nextLine();
                     System.out.print("-->E-mail: ");
                     email = in.nextLine();
-
                     System.out.println(" ");
                     System.out.println("Contato: ");
                     System.out.print("Tipo: ");
@@ -49,8 +48,6 @@ public class App
                     ddd = in.nextInt();
                     System.out.print("Número: ");
                     numeroCel = in.nextInt();
-                    
-
                     in.nextLine();
                     System.out.println(" ");
                     System.out.print("Endereço-> Rua: ");
@@ -58,8 +55,7 @@ public class App
                     System.out.print("Endereço-> Cidade: ");
                     cidade = in.nextLine();
                     System.out.print("Endereço-> Estado: ");
-                    Estado estado = Estado.valueOf(in.nextLine().toUpperCase());
-
+                    estado = Estado.valueOf(in.nextLine().toUpperCase());
                     try {
                         PessoaController.salvarPessoa(new Pessoa(nome, email, new Endereco(rua, cidade, estado), new Celular(tipoContato, codPais, ddd, numeroCel)));
                     } catch (Exception e) {
@@ -160,6 +156,12 @@ public class App
                                 break;
                         }
                     }
+                    break;
+                case 6:
+                    System.out.println("-=- LIGANDO PARA UM CONTATO -=-");
+                    System.out.print("Digite o ID: ");
+                    idParaLigar = in.nextInt();
+                    System.out.println("Ligando para o número: +" + PessoaController.ligar(idParaLigar).getCodPais() + " (" + PessoaController.ligar(idParaLigar).getDdd() + ")" + " " + PessoaController.ligar(idParaLigar).getNumero());
                     break;
                 case 0:
                     menuPrincipal = false;

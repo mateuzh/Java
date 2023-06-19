@@ -3,9 +3,14 @@ package com.controller;
 import java.util.List;
 
 import com.dal.PessoaDao;
+import com.model.Celular;
 import com.model.Pessoa;
 
 public abstract class PessoaController {
+
+    public static Celular ligar(int id){
+        return PessoaDao.pessoaPorId(id).getCelular();
+    }
 
     public static void salvarPessoa(Pessoa pessoa) {
         try {

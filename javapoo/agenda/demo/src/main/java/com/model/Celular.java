@@ -71,7 +71,7 @@ public class Celular implements Serializable{
 
     @Override
     public String toString() {
-        return "Código do País: " + codPais + "| DDD: " + ddd + "| Número: " + numero + "|";
+        return "| Tipo: " + tipo + "Código do País: " + codPais + "| DDD: " + ddd + "| Número: " + numero + "|";
     }
 
 }
