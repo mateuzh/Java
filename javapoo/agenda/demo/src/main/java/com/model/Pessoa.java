@@ -16,16 +16,16 @@ public class Pessoa implements Serializable{
     private Endereco endereco;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Celular celular;   
+    private ContatoTelefonico celular;   
 
-    public Pessoa(String nome, String email, Endereco endereco, Celular celular) {
+    public Pessoa(String nome, String email, Endereco endereco, ContatoTelefonico celular) {
         this.nome = nome;
         this.email = email;
         this.endereco = endereco;
         this.celular = celular;
     }    
 
-    public Pessoa(int id, String nome, String email, Endereco endereco, Celular celular) {
+    public Pessoa(int id, String nome, String email, Endereco endereco, ContatoTelefonico celular) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -68,16 +68,19 @@ public class Pessoa implements Serializable{
         this.endereco = endereco;
     }
 
-    public Celular getCelular() {
-        return celular;
-    }
+    
 
-    public void setCelular(Celular celular) {
-        this.celular = celular;
-    }
 
     @Override
     public String toString() {
         return "Id - " + id + "| Nome: " + nome + "| E-mail: " + email + "| Endereco: " + endereco + "| |Celular: " + celular + "|";
+    }
+
+    public ContatoTelefonico getCelular() {
+        return celular;
+    }
+
+    public void setCelular(ContatoTelefonico celular) {
+        this.celular = celular;
     }
 }
